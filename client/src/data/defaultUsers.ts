@@ -64,7 +64,7 @@ export const DEFAULT_USERS: DefaultUser[] = [
     "identifiant": "1125988099",
     "codepersonnel": "101234",
     "nom": "Cloé",
-    "prenom": "Marie",
+    "prenom": "Sebast",
     "location": "France",
     "manager": "Jean daniel leroi",
     "email": "none",

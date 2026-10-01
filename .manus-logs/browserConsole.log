@@ -227,3 +227,22 @@
 [2026-10-01T11:33:59.108Z] {"timestamp":1790854436208,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
 [2026-10-01T11:33:59.108Z] {"timestamp":1790854436310,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
 [2026-10-01T11:33:59.108Z] {"timestamp":1790854436351,"level":"WARN","args":["Supabase non configuré : VITE_SUPABASE_URL et VITE_SUPABASE_ANON_KEY sont requis."],"stack":null}
+[2026-10-01T16:46:43.823Z] {"timestamp":1790873151165,"level":"DEBUG","args":["[vite]","hot updated: /src/index.css"],"stack":null}
+[2026-10-01T16:46:43.823Z] {"timestamp":1790873151180,"level":"DEBUG","args":["[vite]","hot updated: /src/App.tsx"],"stack":null}
+[2026-10-01T16:46:43.823Z] {"timestamp":1790873151180,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Settings.tsx"],"stack":null}
+[2026-10-01T16:46:43.823Z] {"timestamp":1790873151181,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Login.tsx"],"stack":null}
+[2026-10-01T16:46:43.823Z] {"timestamp":1790873151181,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Home.tsx"],"stack":null}
+[2026-10-01T16:46:43.823Z] {"timestamp":1790873151182,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Accounts.tsx"],"stack":null}
+[2026-10-01T16:46:43.823Z] {"timestamp":1790873151184,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Payments.tsx"],"stack":null}
+[2026-10-01T16:46:43.823Z] {"timestamp":1790873151185,"level":"DEBUG","args":["[vite]","hot updated: /src/components/Header.tsx"],"stack":null}
+[2026-10-01T16:46:43.823Z] {"timestamp":1790873151188,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Cards.tsx"],"stack":null}
+[2026-10-01T16:48:46.212Z] {"timestamp":1790873325405,"level":"ERROR","args":["[vite]","Failed to reload /src/components/BlockAlert.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)"],"stack":"Error\n    at console.error (http://localhost:3000/__manus__/debug-collector.js:391:37)\n    at Object.error (http://localhost:3000/@vite/client:809:26)\n    at HMRClient.warnFailedUpdate (http://localhost:3000/@vite/client:181:15)\n    at HMRClient.fetchUpdate (http://localhost:3000/@vite/client:212:10)\n    at async Promise.all (index 1)\n    at async HMRClient.queueUpdate (http://localhost:3000/@vite/client:196:5)\n    at async Promise.all (index 0)\n    at async handleMessage (http://localhost:3000/@vite/client:838:4)"}
+[2026-10-01T16:48:46.212Z] {"timestamp":1790873326061,"level":"DEBUG","args":["[vite]","hot updated: /src/index.css"],"stack":null}
+[2026-10-01T16:48:46.212Z] {"timestamp":1790873326062,"level":"DEBUG","args":["[vite]","hot updated: /src/components/BlockAlert.tsx"],"stack":null}
+[2026-10-01T16:48:48.214Z] {"timestamp":1790873326268,"level":"ERROR","args":["[vite]","Failed to reload /src/components/BlockAlert.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)"],"stack":"Error\n    at console.error (http://localhost:3000/__manus__/debug-collector.js:391:37)\n    at Object.error (http://localhost:3000/@vite/client:809:26)\n    at HMRClient.warnFailedUpdate (http://localhost:3000/@vite/client:181:15)\n    at HMRClient.fetchUpdate (http://localhost:3000/@vite/client:212:10)\n    at async Promise.all (index 1)\n    at async HMRClient.queueUpdate (http://localhost:3000/@vite/client:196:5)\n    at async Promise.all (index 0)\n    at async handleMessage (http://localhost:3000/@vite/client:838:4)"}
+[2026-10-01T16:48:48.214Z] {"timestamp":1790873326269,"level":"DEBUG","args":["[vite]","hot updated: /src/index.css"],"stack":null}
+[2026-10-01T16:48:48.214Z] {"timestamp":1790873326269,"level":"DEBUG","args":["[vite]","hot updated: /src/components/BlockAlert.tsx"],"stack":null}
+[2026-10-01T16:49:59.100Z] {"timestamp":1790873398063,"level":"DEBUG","args":["[vite]","hot updated: /src/index.css"],"stack":null}
+[2026-10-01T16:49:59.100Z] {"timestamp":1790873398063,"level":"DEBUG","args":["[vite]","hot updated: /src/components/BlockAlert.tsx"],"stack":null}
+[2026-10-01T16:51:36.355Z] {"timestamp":1790873494446,"level":"DEBUG","args":["[vite]","hot updated: /src/index.css"],"stack":null}
+[2026-10-01T16:51:36.355Z] {"timestamp":1790873494448,"level":"DEBUG","args":["[vite]","hot updated: /src/components/BlockAlert.tsx"],"stack":null}
