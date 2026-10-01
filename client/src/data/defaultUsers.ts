@@ -14,6 +14,7 @@ export type Transaction = {
   amount: number;
   status: string;
   category: string;
+  
 };
 
 export type DefaultUser = {
@@ -79,7 +80,7 @@ export const DEFAULT_USERS: DefaultUser[] = [
         "id": "cc",
         "type": "Compte Courant",
         "number": "N°******2200",
-        "balance": 1000000,
+        "balance": 2320000,
         "icon": "wallet"
       },
       {
@@ -105,28 +106,20 @@ export const DEFAULT_USERS: DefaultUser[] = [
       }
     ],
     "transactions": [
+    
       {
         "id": 1,
-        "type": "Virement sortant",
-        "reference": "MA64000000003000400000",
-        "date": "14 Avril 2025",
-        "amount": -25000,
-        "status": "Effectué",
-        "category": "Virement"
-      },
-      {
-        "id": 2,
         "type": "Virement entrant",
         "reference": "MA64000000004000400000",
-        "date": "05 Mars 2025",
-        "amount": 20000,
+        "date": "20 Mai 2026",
+        "amount": 23200000,
         "status": "Effectué",
         "category": "Revenu"
       }
     ],
     "card": {
       "number": "4973 1200 8800 2200",
-      "holder": "Jean Dupont",
+      "holder": "Cloé Marie",
       "expiry": "12/27",
       "isBlocked": false,
       "foreignPayments": true,
@@ -134,14 +127,14 @@ export const DEFAULT_USERS: DefaultUser[] = [
       "withdrawalLimit": 1200
     },
     "rib": {
-      "bankName": "CRÉDIT AGRICOLE DU MAROC",
+      "bankName": "CRÉDIT AGRICOLE DE FRANCE",
       "bankCode": "225",
       "branchCode": "01000",
       "accountNumber": "5435012300",
       "key": "10",
       "iban": "MA64 2250 1000 5435012300 10",
       "swift": "CNCAMAMRXXX",
-      "bankAddress": "49 place des Alaouites, 10000 Rabat, Maroc"
+      "bankAddress": "Crédit Agricole de Paris Marais Saint Paul — 16 Rue de Rivoli, 75004 Paris"
     }
   },
   {

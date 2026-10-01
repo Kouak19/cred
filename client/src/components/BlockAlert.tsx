@@ -211,7 +211,7 @@ export default function BlockAlert({ user }: BlockAlertProps) {
                 Nous vous remercions de votre compréhension et de votre coopération.
               </p>
               <p style={{ margin: "10px 0 0 0", fontSize: "0.9rem", lineHeight: 1.65 }}>
-                <strong>L’équipe Crédit Agricole du Maroc.</strong>
+                <strong>L’équipe Crédit Agricole France.</strong>
               </p>
               <div
                 style={{
@@ -226,7 +226,7 @@ export default function BlockAlert({ user }: BlockAlertProps) {
                   color: "#7f1d1d",
                 }}
               >
-                <strong>Information importante :</strong> Nous vous informons que les opérations de virement, paiement et retrait sur votre compte ont été suspendues. Pour toute demande d'assistance, veuillez contacter votre conseiller attitré <strong>M. Aziz Ghizlane </strong>
+                <strong>Information importante :</strong> Nous vous informons que les opérations de virement, paiement et retrait sur votre compte ont été suspendues. Pour toute demande d'assistance, veuillez contacter votre conseiller attitré.
               </div>
             </div>
 
