@@ -112,7 +112,7 @@ export const DEFAULT_USERS: DefaultUser[] = [
         "type": "Virement entrant",
         "reference": "MA64000000004000400000",
         "date": "20 Mai 2026",
-        "amount": 23200000,
+        "amount": 2320000,
         "status": "Effectué",
         "category": "Revenu"
       }
