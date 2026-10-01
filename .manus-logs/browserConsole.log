@@ -215,3 +215,15 @@
 [2026-10-01T11:09:27.358Z] {"timestamp":1790852917188,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Payments.tsx"],"stack":null}
 [2026-10-01T11:09:27.358Z] {"timestamp":1790852917199,"level":"DEBUG","args":["[vite]","hot updated: /src/components/Header.tsx"],"stack":null}
 [2026-10-01T11:09:27.358Z] {"timestamp":1790852917200,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Cards.tsx"],"stack":null}
+[2026-10-01T11:26:27.345Z] {"timestamp":1790853948426,"level":"DEBUG","args":["[vite]","hot updated: /src/index.css"],"stack":null}
+[2026-10-01T11:26:27.345Z] {"timestamp":1790853948454,"level":"DEBUG","args":["[vite]","hot updated: /src/App.tsx"],"stack":null}
+[2026-10-01T11:26:27.345Z] {"timestamp":1790853948455,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Settings.tsx"],"stack":null}
+[2026-10-01T11:26:27.345Z] {"timestamp":1790853948456,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Login.tsx"],"stack":null}
+[2026-10-01T11:26:27.345Z] {"timestamp":1790853948457,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Home.tsx"],"stack":null}
+[2026-10-01T11:26:27.345Z] {"timestamp":1790853948458,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Accounts.tsx"],"stack":null}
+[2026-10-01T11:26:27.345Z] {"timestamp":1790853948459,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Payments.tsx"],"stack":null}
+[2026-10-01T11:26:27.345Z] {"timestamp":1790853948459,"level":"DEBUG","args":["[vite]","hot updated: /src/components/Header.tsx"],"stack":null}
+[2026-10-01T11:26:27.345Z] {"timestamp":1790853948460,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Cards.tsx"],"stack":null}
+[2026-10-01T11:33:59.108Z] {"timestamp":1790854436208,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-10-01T11:33:59.108Z] {"timestamp":1790854436310,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-10-01T11:33:59.108Z] {"timestamp":1790854436351,"level":"WARN","args":["Supabase non configuré : VITE_SUPABASE_URL et VITE_SUPABASE_ANON_KEY sont requis."],"stack":null}
