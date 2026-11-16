@@ -66,7 +66,7 @@ const createEmailHtml = ({
     <div style="padding:32px 16px">
       <div style="max-width:640px;margin:0 auto;background:#ffffff;border:1px solid #dceae5;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,78,58,.08)">
         <div style="height:6px;background:#e3313d"></div>
-        <div style="padding:28px 32px;background:#006b4f">
+        <div style="padding:28px 32px;background:#fffff">
           <img src="cid:ca-logo" width="220" height="58" alt="Crédit Agricole France" style="display:block;width:220px;height:58px;border:0" />
         </div>
         <div style="padding:32px">

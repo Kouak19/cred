@@ -67,7 +67,7 @@ export default function Login() {
   return (
     <div className="min-h-screen bg-[#f3f6f1] text-[#17352e] lg:grid lg:grid-cols-[minmax(360px,0.92fr)_minmax(520px,1.08fr)]">
       {/* Morocco brand panel */}
-      <aside className="relative hidden min-h-screen overflow-hidden bg-[#006b4f] px-10 py-10 text-white lg:flex lg:flex-col lg:justify-between xl:px-16">
+      <aside className="relative hidden min-h-screen overflow-hidden bg-[#ffffff] px-10 py-10 text-white lg:flex lg:flex-col lg:justify-between xl:px-16">
         <div className="absolute -right-36 -top-36 h-[34rem] w-[34rem] rounded-full border-[70px] border-white/[0.05]" />
         <div className="absolute -bottom-48 -left-36 h-[30rem] w-[30rem] rounded-full border-[52px] border-white/[0.06]" />
         <div className="absolute bottom-24 right-14 h-36 w-36 rounded-full bg-[#e30613]/15 blur-3xl" />
