@@ -246,3 +246,4 @@
 [2026-10-01T16:49:59.100Z] {"timestamp":1790873398063,"level":"DEBUG","args":["[vite]","hot updated: /src/components/BlockAlert.tsx"],"stack":null}
 [2026-10-01T16:51:36.355Z] {"timestamp":1790873494446,"level":"DEBUG","args":["[vite]","hot updated: /src/index.css"],"stack":null}
 [2026-10-01T16:51:36.355Z] {"timestamp":1790873494448,"level":"DEBUG","args":["[vite]","hot updated: /src/components/BlockAlert.tsx"],"stack":null}
+[2026-10-03T13:02:28.953Z] {"timestamp":1790875706438,"level":"LOG","args":["[vite] server connection lost. Polling for restart..."],"stack":null}

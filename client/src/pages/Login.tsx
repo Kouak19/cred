@@ -9,7 +9,7 @@ function MarocLogo({ inverse = false }: { inverse?: boolean }) {
   const mutedColor = inverse ? "text-white/65" : "text-[#5f746d]";
 
   return (
-    <div className="flex items-center gap-3" aria-label="Crédit Agricole du Maroc">
+    <div className="flex items-center gap-3" aria-label="Crédit Agricole France">
 <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 93.285 20.51"
