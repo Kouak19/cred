@@ -76,11 +76,11 @@ export default function Login() {
           <MarocLogo inverse />
           <div className="mt-16 max-w-md">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#f2c84b]">Banque en ligne</p>
-            <h1 className="mt-5 font-[Poppins] text-4xl font-semibold leading-[1.12] tracking-[-0.04em] xl:text-5xl">
+            <h1 className="mt-5 font-[Poppins] text-4xl text-[#17352e] font-semibold leading-[1.12] tracking-[-0.04em] xl:text-5xl">
               Votre banque,<br />
-              <span className="text-[#b8e2c1]">à vos côtés.</span>
+              <span className="text-[#006b4f]">à vos côtés.</span>
             </h1>
-            <p className="mt-6 max-w-sm text-sm leading-7 text-white/70">
+            <p className="mt-6 max-w-sm text-sm leading-7 text-[#17352e]">
               Accédez simplement à vos comptes, vos cartes et vos opérations depuis votre espace sécurisé Crédit Agricole du Maroc.
             </p>
           </div>
@@ -92,8 +92,8 @@ export default function Login() {
               <Shield size={18} className="text-[#f2c84b]" />
             </div>
             <div>
-              <p className="text-sm font-semibold">Connexion protégée</p>
-              <p className="mt-0.5 text-xs text-white/55">Vos données sont traitées de manière confidentielle.</p>
+              <p className="text-sm font-semibold text-[#17352e]">Connexion protégée</p>
+              <p className="mt-0.5 text-xs text-[#17352e]">Vos données sont traitées de manière confidentielle.</p>
             </div>
           </div>
           <p className="text-xs text-white/40">© 2026 Crédit Agricole du Maroc · Tous droits réservés</p>
