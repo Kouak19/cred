@@ -8641,30 +8641,54 @@ export const findDefaultUser = (identifiant: string, codepersonnel: string) =>
     (user) => user.identifiant === identifiant && user.codepersonnel === codepersonnel,
   );
 
+const PERSISTED_USER_PREFIX = "credit-agricole-persisted-user:";
+
+const getLocalPersistedUser = (userId: string): DefaultUser | null => {
+  if (typeof window === "undefined") return null;
+
+  const storedUser = window.localStorage.getItem(`${PERSISTED_USER_PREFIX}${userId}`);
+  if (!storedUser) return null;
+
+  try {
+    return JSON.parse(storedUser) as DefaultUser;
+  } catch {
+    window.localStorage.removeItem(`${PERSISTED_USER_PREFIX}${userId}`);
+    return null;
+  }
+};
+
+const mergePersistedUser = (baseUser: DefaultUser, payload: Partial<DefaultUser>): DefaultUser => ({
+  ...baseUser,
+  ...payload,
+  // Les identifiants de démonstration restent définis dans defaultUsers.ts.
+  id: baseUser.id,
+  identifiant: baseUser.identifiant,
+  codepersonnel: baseUser.codepersonnel,
+  accounts: Array.isArray(payload.accounts) ? payload.accounts : baseUser.accounts,
+  transactions: Array.isArray(payload.transactions) ? payload.transactions : baseUser.transactions,
+  card: payload.card ?? baseUser.card,
+  rib: payload.rib ?? baseUser.rib,
+});
+
 export const loadRemoteUser = async (baseUser: DefaultUser): Promise<DefaultUser> => {
-  if (!isSupabaseConfigured) return baseUser;
+  const localUser = getLocalPersistedUser(baseUser.id);
+
+  if (!isSupabaseConfigured) {
+    return localUser ? mergePersistedUser(baseUser, localUser) : baseUser;
+  }
 
   const { data, error } = await supabase
     .from("user_data")
     .select("payload")
     .eq("user_id", baseUser.id)
     .maybeSingle();
+  if (error) {
+    // Le cache local permet de conserver le solde même si Supabase est momentanément indisponible.
+    return localUser ? mergePersistedUser(baseUser, localUser) : Promise.reject(error);
+  }
 
-  if (error) throw error;
-  const payload = (data?.payload ?? {}) as Partial<DefaultUser>;
-
-  return {
-    ...baseUser,
-    ...payload,
-    // Les identifiants de démonstration restent définis dans defaultUsers.ts.
-    id: baseUser.id,
-    identifiant: baseUser.identifiant,
-    codepersonnel: baseUser.codepersonnel,
-    accounts: Array.isArray(payload.accounts) ? payload.accounts : baseUser.accounts,
-    transactions: Array.isArray(payload.transactions) ? payload.transactions : baseUser.transactions,
-    card: payload.card ?? baseUser.card,
-    rib: payload.rib ?? baseUser.rib,
-  };
+  const payload = (data?.payload ?? localUser ?? {}) as Partial<DefaultUser>;
+  return mergePersistedUser(baseUser, payload);
 };
 
 export const AUTH_SESSION_KEY = "credit-agricole-authenticated";
@@ -8704,9 +8728,10 @@ export const getPersistedUsers = (): DefaultUser[] => DEFAULT_USERS.map(withDefa
 // Les virements peuvent conserver leurs comptes et transactions pendant la session,
 // sans écraser les données de profil définies dans DEFAULT_USERS.
 export const savePersistedUser = async (updatedUser: DefaultUser): Promise<DefaultUser> => {
-  // La session locale est mise à jour immédiatement pour que l'interface reste cohérente.
+  // La session et le stockage durable sont mis à jour immédiatement pour que le solde survive à la déconnexion.
   if (typeof window !== "undefined") {
     sessionStorage.setItem(AUTH_USER_KEY, JSON.stringify(updatedUser));
+    localStorage.setItem(`${PERSISTED_USER_PREFIX}${updatedUser.id}`, JSON.stringify(updatedUser));
   }
 
   if (!isSupabaseConfigured) return updatedUser;
