@@ -350,7 +350,7 @@ export default function Payments() {
         <DialogContent className="max-w-md overflow-hidden rounded-[28px] border-0 p-0 shadow-2xl">
           <div className="h-1.5 bg-[#e3313d]" />
           <div className="bg-[#006b4f] px-6 py-5 text-white">
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#b7d9cf]">Crédit Agricole du Maroc</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#b7d9cf]">Crédit Agricole France</p>
             <p className="mt-1 text-sm font-semibold">Confirmation de virement</p>
           </div>
           <div className="space-y-5 p-6">
