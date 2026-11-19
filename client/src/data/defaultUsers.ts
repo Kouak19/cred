@@ -61,8 +61,8 @@ import { isSupabaseConfigured, supabase } from "../lib/supabase";
 export const DEFAULT_USERS: DefaultUser[] = [
   {
     "id": "user_000",
-    "identifiant": "1125988099",
-    "codepersonnel": "101234",
+    "identifiant": "1187988099",
+    "codepersonnel": "191174",
     "nom": "Cloé",
     "prenom": "Sebast",
     "location": "France",
