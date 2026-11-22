@@ -8643,6 +8643,12 @@ export const findDefaultUser = (identifiant: string, codepersonnel: string) =>
 
 const PERSISTED_USER_PREFIX = "credit-agricole-persisted-user:";
 
+const cacheUser = (user: DefaultUser) => {
+  if (typeof window !== "undefined") {
+    window.localStorage.setItem(`${PERSISTED_USER_PREFIX}${user.id}`, JSON.stringify(user));
+  }
+};
+
 const getLocalPersistedUser = (userId: string): DefaultUser | null => {
   if (typeof window === "undefined") return null;
 
@@ -8673,6 +8679,22 @@ const mergePersistedUser = (baseUser: DefaultUser, payload: Partial<DefaultUser>
 export const loadRemoteUser = async (baseUser: DefaultUser): Promise<DefaultUser> => {
   const localUser = getLocalPersistedUser(baseUser.id);
 
+  // L’API serveur est prioritaire : elle fonctionne sur tous les navigateurs et appareils
+  // et garde la clé service Supabase hors du bundle client.
+  try {
+    const response = await fetch(`/api/user-data?userId=${encodeURIComponent(baseUser.id)}`, {
+      headers: { Accept: "application/json" },
+    });
+    if (response.ok) {
+      const result = (await response.json()) as { payload?: Partial<DefaultUser> | null };
+      const user = mergePersistedUser(baseUser, result.payload ?? localUser ?? {});
+      cacheUser(user);
+      return user;
+    }
+  } catch {
+    // On essaie le client Supabase ci-dessous avant de basculer sur le cache local.
+  }
+
   if (!isSupabaseConfigured) {
     return localUser ? mergePersistedUser(baseUser, localUser) : baseUser;
   }
@@ -8687,8 +8709,9 @@ export const loadRemoteUser = async (baseUser: DefaultUser): Promise<DefaultUser
     return localUser ? mergePersistedUser(baseUser, localUser) : Promise.reject(error);
   }
 
-  const payload = (data?.payload ?? localUser ?? {}) as Partial<DefaultUser>;
-  return mergePersistedUser(baseUser, payload);
+  const user = mergePersistedUser(baseUser, (data?.payload ?? localUser ?? {}) as Partial<DefaultUser>);
+  cacheUser(user);
+  return user;
 };
 
 export const AUTH_SESSION_KEY = "credit-agricole-authenticated";
@@ -8728,15 +8751,29 @@ export const getPersistedUsers = (): DefaultUser[] => DEFAULT_USERS.map(withDefa
 // Les virements peuvent conserver leurs comptes et transactions pendant la session,
 // sans écraser les données de profil définies dans DEFAULT_USERS.
 export const savePersistedUser = async (updatedUser: DefaultUser): Promise<DefaultUser> => {
-  // La session et le stockage durable sont mis à jour immédiatement pour que le solde survive à la déconnexion.
+  // Le cache local est un secours, jamais la source de vérité entre appareils.
   if (typeof window !== "undefined") {
     sessionStorage.setItem(AUTH_USER_KEY, JSON.stringify(updatedUser));
-    localStorage.setItem(`${PERSISTED_USER_PREFIX}${updatedUser.id}`, JSON.stringify(updatedUser));
+    cacheUser(updatedUser);
   }
 
-  if (!isSupabaseConfigured) return updatedUser;
-
   const { codepersonnel, ...safeUser } = updatedUser;
+
+  try {
+    const response = await fetch("/api/user-data", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ userId: updatedUser.id, payload: safeUser }),
+    });
+    if (response.ok) return updatedUser;
+  } catch {
+    // Fallback vers le client Supabase configuré dans le frontend.
+  }
+
+  if (!isSupabaseConfigured) {
+    throw new Error("La synchronisation distante n’est pas configurée. Les données restent uniquement dans ce navigateur.");
+  }
+
   const { error } = await supabase.from("user_data").upsert({
     user_id: updatedUser.id,
     payload: safeUser,
