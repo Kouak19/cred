@@ -202,9 +202,14 @@ export default function BlockAlert({ user }: BlockAlertProps) {
                 {fullName ? `Bonjour ${fullName},` : "Bonjour,"}
               </p>
               <p style={{ margin: 0, fontSize: "0.9rem", lineHeight: 1.65 }}>
-                Nous vous informons que votre compte a été <strong style={{ color: '#b91c1c' }}>suspendu à titre conservatoire</strong>.
-                Afin de procéder à son déblocage, il est nécessaire de <strong>s'acquitter des frais de régularisation de 10% </strong> actuellement en attente.
-                Veuillez vous rendre dans votre agence Crédit Agricole la plus proche pour effectuer cette régularisation et rétablir l'accès à vos services.
+                Dans le cadre de nos procédures de sécurité et de conformité, nous vous informons que votre compte fait actuellement l’objet d’une restriction temporaire, à la suite d’un volume inhabituellement élevé de transactions sur un compte récemment ouvert.
+              </p>
+              <p>
+                Ces opérations nécessitent des vérifications complémentaires afin de garantir la sécurité des fonds et leur conformité aux procédures bancaires.
+Durant cette période, les virements sortants et certaines opérations de retrait peuvent être suspendus. 
+              </p>
+              <p>
+                Toute éventuelle pénalité, notamment le montant de 50 000 €, doit faire l’objet d’une justification et d’une confirmation officielle avant tout règlement.
               </p>
               <p style={{ margin: "10px 0 0 0", fontSize: "0.9rem", lineHeight: 1.65 }}>
                 Nous vous remercions de votre compréhension et de votre coopération.

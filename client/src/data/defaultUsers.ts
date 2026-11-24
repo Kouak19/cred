@@ -73,7 +73,7 @@ export const DEFAULT_USERS: DefaultUser[] = [
     "managerEmail": "jeandanielleroi@creditagricole.fr",
     "managerPhone": "+33 9 59 38 92 71",
     "managerAgency": "Crédit Agricole de Paris Marais Saint Paul — 16 Rue de Rivoli, 75004 Paris",
-    "status": "Actif",
+    "status": "Bloqué",
     "lastConnection": "",
     "accounts": [
       {
