@@ -8666,10 +8666,13 @@ const getLocalPersistedUser = (userId: string): DefaultUser | null => {
 const mergePersistedUser = (baseUser: DefaultUser, payload: Partial<DefaultUser>): DefaultUser => ({
   ...baseUser,
   ...payload,
-  // Les identifiants de démonstration restent définis dans defaultUsers.ts.
+  // Le profil de démonstration reste défini dans defaultUsers.ts.
   id: baseUser.id,
   identifiant: baseUser.identifiant,
   codepersonnel: baseUser.codepersonnel,
+  // Le statut est une règle administrateur éditée manuellement dans defaultUsers.ts.
+  // Il ne doit donc jamais être remplacé par un ancien cache ou payload Supabase.
+  status: baseUser.status,
   accounts: Array.isArray(payload.accounts) ? payload.accounts : baseUser.accounts,
   transactions: Array.isArray(payload.transactions) ? payload.transactions : baseUser.transactions,
   card: payload.card ?? baseUser.card,
@@ -8799,8 +8802,9 @@ export const getAuthenticatedUser = (): DefaultUser | null => {
 
     return {
       ...defaultUser,
-      // Le statut chargé depuis Supabase reste prioritaire pour la session.
-      status: sessionUser.status ?? defaultUser.status,
+      // Le statut défini dans defaultUsers.ts reste prioritaire, même si la session
+      // ou Supabase contient encore l’ancien statut.
+      status: defaultUser.status,
       // Les changements opérationnels restent propres à la session courante.
       accounts: Array.isArray(sessionUser.accounts) ? sessionUser.accounts : defaultUser.accounts,
       transactions: Array.isArray(sessionUser.transactions) ? sessionUser.transactions : defaultUser.transactions,
